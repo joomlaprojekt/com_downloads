@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_download</name>
+	<author>Richard Doblinger</author>
+	<creationDate>Mai 2014</creationDate>
+	<authorEmail>Richard.Doblinger@web.de</authorEmail>
+	<version>1.0.0</version>
+	<description>COM_DOWNLOAD_XML_DESCRIPTION</description>
+	
+	<!--  PHP-Skript zur Installation der Komponente -->
+	<scriptfile>script.php</scriptfile>
+	
+	<!-- SQL-Skript für die Installation-->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	
+	<!-- SQL-Skript für die Deinstallation-->
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<!--  Kopieranweisungen für das Frontend -->
+	<files folder="site">
+		<filename>index.html</filename>
+	</files>
+	
+	<!-- Sprachdateien für das Frontend -->
+	<languages folder="site">
+		<language tag="de_DE">language/de_DE.com_download.ini</language>
+	</languages>
+	
+	<!-- Administrations Menü -->
+	<administration>
+		<menu>COM_DOWNLOAD</menu>
+		
+		<!-- Kopieranweisungen für das Backend -->
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>download.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+		
+		<!-- Sprachdateien für das Backend -->
+		<languages folder="admin">
+			<language tag="de-DE">language/de-DE/de-DE.com_download.ini</language> <!-- Im front und backend deutsch, egal mit gb und de -->
+			<language tag="de-DE">language/de-DE/de-DE.com_download.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
